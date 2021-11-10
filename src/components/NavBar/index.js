@@ -1,13 +1,18 @@
+import { Link } from 'react-router-dom';
 import Wrapper from '../Wrapper';
-import { bar, title, row } from './styles.module.css';
+import { bar, title, row, btn } from './styles.module.css';
 
-const NavBar = () => {
+const NavBar = ({ openModal }) => {
   return (
     <nav className={bar}>
       <Wrapper>
         <div className={row}>
-          <h1 className={title}>Metrics Admin</h1>
-          <button className='btn'>Add Metric</button>
+          <Link to='/' className={title}>
+            Metrics Admin
+          </Link>
+          <button className={btn} onClick={openModal}>
+            Add Metric
+          </button>
         </div>
       </Wrapper>
     </nav>

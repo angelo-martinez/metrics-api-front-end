@@ -26,6 +26,20 @@ const Metric = () => {
       .catch((e) => console.error(e));
   }, []);
 
+  const formatDate = (date) => {
+    const dt = new Date(date);
+    return `${(dt.getMonth() + 1).toString().padStart(2, '0')}/${dt
+      .getDate()
+      .toString()
+      .padStart(2, '0')}/${dt.getFullYear().toString().padStart(4, '0')} ${dt
+      .getHours()
+      .toString()
+      .padStart(2, '0')}:${dt.getMinutes().toString().padStart(2, '0')}:${dt
+      .getSeconds()
+      .toString()
+      .padStart(2, '0')}`;
+  };
+
   console.log({ metric, recordSet });
 
   return (
@@ -44,12 +58,14 @@ const Metric = () => {
               {recordSet.map((record, i) => {
                 return (
                   <div key={i}>
-                    Created: {record.timestamp} Value: {record.value}
+                    <strong>Created:</strong> {formatDate(record.timestamp)}{' '}
+                    <strong>Value:</strong>
+                    {record.value}
                   </div>
                 );
               })}
             </td>
-            <td className={td}>{metric.timestamp}</td>
+            <td className={td}>{formatDate(metric.timestamp)}</td>
           </tr>
         </tbody>
       </table>

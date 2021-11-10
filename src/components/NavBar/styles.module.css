@@ -12,10 +12,29 @@
   font-weight: 200;
   font-size: 30px;
   line-height: 1.2;
+  color: inherit;
+  text-decoration: none;
 }
 
 .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.btn {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  background-color: #2acafc;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 45px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.btn:hover {
+  background-color: #23a2c8;
 }
