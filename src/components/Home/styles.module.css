@@ -1,12 +1,28 @@
 .grid {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr;
   grid-gap: 20px;
   padding-top: 50px;
+}
+
+@media screen and (min-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .box {
   background-color: #2acafc;
   border-radius: 15px;
   padding: 30px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1.2;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 15px;
 }

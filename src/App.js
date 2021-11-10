@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Metric from './components/Metric';
 import NavBar from './components/NavBar';
@@ -22,7 +22,7 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route exact path='/' element={<Home metrics={metrics} />} />
-        <Route path='/metric' element={<Metric />} />
+        <Route path='/metric/:id' element={<Metric />} />
       </Routes>
     </Router>
   );
