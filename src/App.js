@@ -5,21 +5,23 @@ import Metric from './components/Metric';
 import NavBar from './components/NavBar';
 
 const App = () => {
-  const [data, setData] = useState('');
+  const [metrics, setMetrics] = useState([]);
+
   useEffect(() => {
     fetch('http://localhost:5000/metrics', {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })
       .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((e) => console.log(e));
+      .then((data) => setMetrics(data.metrics))
+      .catch((e) => console.error(e));
   }, []);
+
   return (
     <Router>
       <NavBar />
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        <Route exact path='/' element={<Home metrics={metrics} />} />
         <Route path='/metric' element={<Metric />} />
       </Routes>
     </Router>
