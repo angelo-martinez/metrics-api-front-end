@@ -4,3 +4,17 @@
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
