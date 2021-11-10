@@ -13,7 +13,7 @@ const Home = ({ metrics }) => {
               <h2 className={title}>{metric.name}</h2>
               <div className='btns-row'>
                 <button className='btn'>Delete</button>
-                <Link to={`/metric/?id=${metric.id}`}>Open</Link>
+                <Link to={`/metric/${metric.id}`}>Open</Link>
               </div>
             </div>
           );

@@ -21,8 +21,15 @@ const App = () => {
     <Router>
       <NavBar />
       <Routes>
-        <Route exact path='/' element={<Home metrics={metrics} />} />
-        <Route path='/metric/:id' element={<Metric />} />
+        <Route
+          exact
+          path='/'
+          element={metrics.length > 0 && <Home metrics={metrics} />}
+        />
+        <Route
+          path='/metric/:id'
+          element={metrics.length > 0 && <Metric metrics={metrics} />}
+        />
       </Routes>
     </Router>
   );
