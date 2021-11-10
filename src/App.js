@@ -26,10 +26,7 @@ const App = () => {
           path='/'
           element={metrics.length > 0 && <Home metrics={metrics} />}
         />
-        <Route
-          path='/metric/:id'
-          element={metrics.length > 0 && <Metric metrics={metrics} />}
-        />
+        <Route path='/metric/:id' element={<Metric />} />
       </Routes>
     </Router>
   );
