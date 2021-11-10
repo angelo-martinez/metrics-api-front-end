@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './components/Home'
+import Metric from './components/Metric'
 
-function App() {
+const App = () => {
   const [data, setData] = useState('');
   useEffect(() => {
-    const requestOptions = {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    };
-
     fetch('http://localhost:5000/metrics', {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
@@ -16,11 +18,22 @@ function App() {
       .then(response => response.json())
       .then(data => setData(data))
       .catch(e => console.log(e))
-  }, [])
+  }, []);
   return (
-    <div className="App">
-      {JSON.stringify(data)}
-    </div>
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+        </ul>
+        <hr />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/metric" element={<Metric />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
