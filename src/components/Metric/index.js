@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Modal from 'react-modal';
 import Wrapper from '../Wrapper';
-import { table, title, th, td, btn } from './styles.module.css';
-import { close, label, input, submit } from '../../css/modal.module.css';
+import { table, title, th, td } from './styles.module.css';
+import { close, label, input } from '../../css/modal.module.css';
+import { btn, yellowBtn } from '../../css/button.module.css';
 
 const customStyles = {
   content: {
@@ -102,20 +103,14 @@ const Metric = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className={td}>
-                {recordSet.map((record, i) => {
-                  return (
-                    <div key={i}>
-                      <strong>Created:</strong> {formatDate(record.timestamp)}{' '}
-                      <strong>Value:</strong>
-                      {record.value}
-                    </div>
-                  );
-                })}
-              </td>
-              <td className={td}>{formatDate(metric.timestamp)}</td>
-            </tr>
+            {recordSet.map((record, i) => {
+              return (
+                <tr key={i}>
+                  <td className={td}>{record.value}</td>
+                  <td className={td}>{formatDate(record.timestamp)}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </Wrapper>
@@ -138,7 +133,7 @@ const Metric = () => {
               step='0.01'
             />
           </label>
-          <button type='submit' className={submit}>
+          <button type='submit' className={yellowBtn}>
             submit
           </button>
         </form>

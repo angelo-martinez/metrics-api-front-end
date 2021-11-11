@@ -1,0 +1,51 @@
+.btn {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  background-color: #2acafc;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 45px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in;
+}
+
+.btn:hover {
+  background-color: #23a2c8;
+}
+
+.deleteBtn {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in;
+}
+
+.deleteBtn:hover {
+  background-color: rgb(165, 8, 8);
+}
+
+.yellowBtn {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  background-color: #fcd12a;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in;
+  text-decoration: none;
+}
+
+.yellowBtn:hover {
+  background-color: #b8991e;
+}

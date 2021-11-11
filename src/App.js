@@ -4,7 +4,8 @@ import Modal from 'react-modal';
 import Home from './components/Home';
 import Metric from './components/Metric';
 import NavBar from './components/NavBar';
-import { close, label, input, submit } from './css/modal.module.css';
+import { close, label, input } from './css/modal.module.css';
+import { yellowBtn } from './css/button.module.css';
 
 const customStyles = {
   content: {
@@ -89,7 +90,7 @@ const App = () => {
             Metric Name:
             <input className={input} type='text' required name='metricName' />
           </label>
-          <button type='submit' className={submit}>
+          <button type='submit' className={yellowBtn}>
             submit
           </button>
         </form>

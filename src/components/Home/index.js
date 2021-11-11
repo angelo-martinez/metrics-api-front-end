@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Wrapper from '../Wrapper';
-import { box, grid, title, row, deleteBtn, link } from './styles.module.css';
+import { box, grid, title, row } from './styles.module.css';
+import { deleteBtn, yellowBtn } from '../../css/button.module.css';
 
 const Home = ({ metrics, fetchMetrics }) => {
   const handleDelete = (id) => {
@@ -27,7 +28,7 @@ const Home = ({ metrics, fetchMetrics }) => {
                 >
                   Delete
                 </button>
-                <Link to={`/metric/${metric.id}`} className={link}>
+                <Link to={`/metric/${metric.id}`} className={yellowBtn}>
                   Open
                 </Link>
               </div>
