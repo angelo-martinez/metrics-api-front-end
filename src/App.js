@@ -4,18 +4,9 @@ import Modal from 'react-modal';
 import Home from './components/Home';
 import Metric from './components/Metric';
 import NavBar from './components/NavBar';
+import modalStyles from './utils/modalStyles';
 import { close, label, input } from './css/modal.module.css';
 import { yellowBtn } from './css/button.module.css';
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '80%',
-    maxWidth: '700px',
-  },
-};
 
 Modal.setAppElement('#root');
 
@@ -80,7 +71,7 @@ const App = () => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={modalStyles}
       >
         <button onClick={closeModal} className={close}>
           X

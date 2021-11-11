@@ -2,19 +2,10 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Modal from 'react-modal';
 import Wrapper from '../Wrapper';
+import modalStyles from '../../utils/modalStyles';
 import { table, title, th, td } from './styles.module.css';
 import { close, label, input } from '../../css/modal.module.css';
 import { btn, yellowBtn } from '../../css/button.module.css';
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '80%',
-    maxWidth: '700px',
-  },
-};
 
 Modal.setAppElement('#root');
 
@@ -117,7 +108,7 @@ const Metric = () => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={modalStyles}
       >
         <button onClick={closeModal} className={close}>
           X
