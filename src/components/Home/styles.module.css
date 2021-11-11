@@ -25,3 +25,44 @@
   text-transform: capitalize;
   margin-bottom: 15px;
 }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deleteBtn {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in;
+}
+
+.deleteBtn:hover {
+  background-color: rgb(165, 8, 8);
+}
+
+.link {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  background-color: #fcd12a;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in;
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: #b8991e;
+}

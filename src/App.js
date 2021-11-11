@@ -66,7 +66,11 @@ const App = () => {
           <Route
             exact
             path='/'
-            element={metrics.length > 0 && <Home metrics={metrics} />}
+            element={
+              metrics.length > 0 && (
+                <Home metrics={metrics} fetchMetrics={fetchMetrics} />
+              )
+            }
           />
           <Route path='/metric/:id' element={<Metric />} />
         </Routes>
@@ -75,9 +79,8 @@ const App = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel='Example Modal'
       >
-        <button onClick={closeModal}>close</button>
+        <button onClick={closeModal}>X</button>
         <form onSubmit={handleSubmit}>
           <label>
             Metric Name:
