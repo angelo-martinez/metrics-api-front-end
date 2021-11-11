@@ -9,3 +9,5 @@
 - timestamps are formatted MM/dd/YYYY HH:mm:ss
 
 Project was built with reactjs creat-react-app, and css modules.
+
+To run project locally run `npm start`
