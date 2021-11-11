@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import Home from './components/Home';
 import Metric from './components/Metric';
 import NavBar from './components/NavBar';
+import { close, label, input, submit } from './css/modal.module.css';
 
 const customStyles = {
   content: {
@@ -80,13 +81,17 @@ const App = () => {
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <button onClick={closeModal}>X</button>
+        <button onClick={closeModal} className={close}>
+          X
+        </button>
         <form onSubmit={handleSubmit}>
-          <label>
+          <label className={label}>
             Metric Name:
-            <input type='text' required name='metricName' />
+            <input className={input} type='text' required name='metricName' />
           </label>
-          <button type='submit'>submit</button>
+          <button type='submit' className={submit}>
+            submit
+          </button>
         </form>
       </Modal>
     </>

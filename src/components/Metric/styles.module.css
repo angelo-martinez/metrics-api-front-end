@@ -1,5 +1,6 @@
 .table {
   width: 100%;
+  margin-top: 10px;
 }
 
 .title {
@@ -15,4 +16,21 @@
 .td {
   background: rgba(0, 0, 0, 0.02);
   text-align: center;
+}
+
+.btn {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  background-color: #2acafc;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 45px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in;
+}
+
+.btn:hover {
+  background-color: #23a2c8;
 }

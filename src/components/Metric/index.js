@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Modal from 'react-modal';
 import Wrapper from '../Wrapper';
-import { table, title, th, td } from './styles.module.css';
+import { table, title, th, td, btn } from './styles.module.css';
+import { close, label, input, submit } from '../../css/modal.module.css';
 
 const customStyles = {
   content: {
@@ -89,7 +90,7 @@ const Metric = () => {
   return (
     <>
       <Wrapper>
-        <button className='btn' onClick={openModal}>
+        <button className={btn} onClick={openModal}>
           Add Value
         </button>
         <table className={table}>
@@ -123,13 +124,23 @@ const Metric = () => {
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <button onClick={closeModal}>X</button>
+        <button onClick={closeModal} className={close}>
+          X
+        </button>
         <form onSubmit={handleSubmit}>
-          <label>
+          <label className={label}>
             Value
-            <input type='number' required name='value' step='0.01' />
+            <input
+              type='number'
+              className={input}
+              required
+              name='value'
+              step='0.01'
+            />
           </label>
-          <button type='submit'>submit</button>
+          <button type='submit' className={submit}>
+            submit
+          </button>
         </form>
       </Modal>
     </>
